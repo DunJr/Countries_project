@@ -1,0 +1,91 @@
+/* YourComponent.css */
+
+/* General Styling */
+.container {
+  padding: 20px;
+}
+
+.mainGrid {
+  width: 100%;
+  margin: 20px 0;
+  background-color: #2b2b2b !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+/* Column Styling */
+.flagCol {
+  color: #333 !important; /* Darker text color */
+}
+
+.countryFlag {
+  height: 50px;
+}
+
+/* .col {
+  background-color: #555;
+  color: red;
+} */
+
+.nameCol,
+.areaCol,
+.populationCol,
+.currencyCol,
+.actionsCol {
+  color: #555 !important; /* Darker text color */
+}
+
+/* Dark Mode Theme */
+body {
+  background-color: #1a1a1a !important;
+  color: #555 !important; /* Darker text color */
+  font-family: "Arial", sans-serif;
+}
+
+/* Links */
+a {
+  color: #3498db !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #2980b9 !important;
+}
+
+/* Grid Styling */
+.k-grid {
+  color: #555 !important; /* Darker text color */
+  background-color: #2b2b2b !important;
+  border: 1px solid #444 !important;
+}
+
+.k-grid-header {
+  background-color: #232323 !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.k-grid-content {
+  border-top: 1px solid #444 !important;
+}
+
+.k-grid td,
+.k-grid th {
+  border: 1px solid #444 !important;
+  padding: 8px; /* Adjust cell padding */
+}
+
+.k-pager-wrap,
+.k-pager-info,
+.k-pager-nav {
+  color: #555 !important; /* Darker text color */
+  background-color: #2b2b2b !important;
+  border: 1px solid #444 !important;
+}
+
+.k-state-selected {
+  background-color: #444 !important;
+  border: 1px solid #444 !important;
+}
+
+/* Add specific styles for other elements as needed */
