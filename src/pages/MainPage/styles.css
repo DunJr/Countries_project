@@ -89,3 +89,23 @@ a:hover {
 }
 
 /* Add specific styles for other elements as needed */
+/* Estilização básica para transformar um link em um botão */
+a {
+  display: inline-block;
+  padding: 10px 20px; /* Ajuste o padding conforme necessário */
+  text-decoration: none;
+  background-color: white; /* Cor de fundo do botão */
+  color: red; /* Cor do texto do botão */
+  border-radius: 5px; /* Cantos arredondados */
+  transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+/* Estilização ao passar o mouse sobre o botão */
+a:hover {
+  background-color: #505050; /* Cor de fundo alterada ao passar o mouse */
+}
+
+.appDesc {
+  color: gray;
+  font-size: 20px;
+}

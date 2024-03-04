@@ -1,4 +1,3 @@
-// Importando bibliotecas e estilos necessários
 import React, { useEffect, useState } from "react";
 import {
   Grid,
@@ -7,14 +6,10 @@ import {
 } from "@progress/kendo-react-grid";
 import { process, State, DataResult } from "@progress/kendo-data-query";
 import "@progress/kendo-theme-default/dist/all.css";
-
-// Importando interface necessária
-import { CountryData } from "../../interfaces/countryInfo";
-
-// Importando estilos locais
+import { CountryData } from "../../types/countryInfo";
 import "./styles.css";
+import { apiCountryInfo } from "../../services/api";
 
-// Estado inicial para as configurações do grid
 const initialDataState: State = {
   sort: [{ field: "name.common", dir: "asc" }],
   take: 10,
@@ -25,19 +20,16 @@ const initialDataState: State = {
   },
 };
 
-// Função para buscar dados da API de países
 const fetchData = async () => {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
-    const data: CountryData[] = await response.json();
-    return data;
+    const response = await apiCountryInfo.get("/all");
+    return response.data;
   } catch (error) {
     console.error("Erro ao buscar dados:", error);
-    throw error; // Lança novamente o erro para que o chamador o manipule
+    throw error;
   }
 };
 
-// Componente para renderizar a célula da bandeira
 interface FlagCellProps {
   dataItem: CountryData;
 }
@@ -58,35 +50,36 @@ const FlagCell: React.FC<FlagCellProps> = ({ dataItem }) => {
   );
 };
 
-// Componente principal da página
 export const MainPage: React.FC = () => {
   const [dataState, setDataState] = useState<State>(initialDataState);
   const [dataResult, setDataResult] = useState<DataResult>({} as DataResult);
-  // const [fData, setfData] = useState<CountryData[]>([]);
 
-  // Efeito para buscar e processar dados quando o estado de dataState muda
   useEffect(() => {
-    const fetchDataAndProcess = async () => {
+    (async () => {
       try {
         const data = await fetchData();
-        // setfData(data);
         setDataResult(process(data, dataState) as DataResult);
       } catch (error) {
         console.log(error);
       }
-    };
-
-    fetchDataAndProcess();
+    })();
   }, [dataState]);
 
-  // Função para lidar com alterações no estado dos dados do grid
   const onDataStateChange = (e: GridDataStateChangeEvent) => {
     setDataState(e.dataState);
   };
 
-  // Renderização do componente
   return (
     <div className="container">
+      <h1>Nation Insights</h1>
+      <div className="descOntainer">
+        <h2 className="appDesc">
+          Nation Insights oferece uma visão detalhada e interativa de
+          informações globais. Explore dados sobre países, incluindo notícias,
+          feriados, e estatísticas essenciais, proporcionando uma compreensão
+          abrangente das nações ao redor do mundo.
+        </h2>
+      </div>
       <Grid
         data={dataResult.data}
         total={dataResult.total}
@@ -94,7 +87,7 @@ export const MainPage: React.FC = () => {
         pageable={true}
         {...dataState}
         onDataStateChange={onDataStateChange}
-        className="mainGrid"
+        className=" mainGrid"
       >
         <Column
           className="flagCol col"
@@ -129,10 +122,10 @@ export const MainPage: React.FC = () => {
         <Column
           className="actionsCol col"
           title="Ações"
-          cell={(props) => (
+          cell={({ dataItem }) => (
             <td>
               <a
-                href={`http://localhost:5173/countryInfoPage/${props.dataItem.name.common}`}
+                href={`http://localhost:5173/countryInfoPage/${dataItem.name.common}`}
               >
                 Mais informações.
               </a>
@@ -143,60 +136,3 @@ export const MainPage: React.FC = () => {
     </div>
   );
 };
-
-// // MainPage.tsx
-// import React, { useEffect, useState } from "react";
-// import { process, State, DataResult } from "@progress/kendo-data-query";
-// import "@progress/kendo-theme-default/dist/all.css";
-
-// import { CountryTemplate } from "../../components/templates/GridTemplate/index";
-// import { CountryData } from "../../interfaces/countryInfo";
-// import { GridDataStateChangeEvent } from "@progress/kendo-react-grid";
-
-// const initialDataState: State = {
-//   sort: [{ field: "ProductName", dir: "asc" }],
-//   take: 5,
-//   skip: 0,
-//   filter: {
-//     logic: "and",
-//     filters: [{ field: "ProductName", operator: "contains", value: "" }],
-//   },
-// };
-
-// export const MainPage: React.FC = () => {
-//   const [dataState, setDataState] = useState<State>(initialDataState);
-//   const [dataResult, setDataResult] = useState<DataResult>({} as DataResult);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch("https://restcountries.com/v3.1/all");
-//         const data: CountryData[] = await response.json();
-//         setDataResult(process(data, dataState) as DataResult);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//       }
-//     };
-
-//     fetchData();
-//   }, [dataState]);
-
-//   const onDataStateChange = (e: GridDataStateChangeEvent) => {
-//     setDataState(e.dataState);
-//   };
-
-//   const handleDetailsClick = (dataItem: unknown) => {
-//     // Perform actions with the specific country dataItem
-//     console.log("Country Info:", dataItem);
-//     // Example: Open a modal with detailed information
-//   };
-
-//   return (
-//     <CountryTemplate
-//       dataResult={dataResult}
-//       dataState={dataState}
-//       onDataStateChange={onDataStateChange}
-//       onDetailsClick={handleDetailsClick}
-//     />
-//   );
-// };
