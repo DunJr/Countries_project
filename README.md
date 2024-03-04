@@ -26,7 +26,7 @@
 ## 4. Executando o Projeto
 
 - **Instruções para Execução:**
-  - Execute `npm start` ou `yarn start` para iniciar o aplicativo localmente.
+  - Execute `npm run dev` ou `yarn dev` para iniciar o aplicativo localmente.
 
 ## 5. Estrutura do Projeto
 
