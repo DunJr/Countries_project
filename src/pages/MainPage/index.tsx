@@ -124,9 +124,7 @@ export const MainPage: React.FC = () => {
           title="Ações"
           cell={({ dataItem }) => (
             <td>
-              <a
-                href={`http://localhost:5173/countryInfoPage/${dataItem.name.common}`}
-              >
+              <a href={`/countryInfoPage/${dataItem.name.common}`}>
                 Mais informações.
               </a>
             </td>
