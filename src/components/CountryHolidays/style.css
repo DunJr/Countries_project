@@ -1,0 +1,34 @@
+.holidayDate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-left: 55px;
+}
+
+.holidayDate:first {
+  display: flex;
+}
+
+.holidayDateSelectorContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.holidayDateSelectorContainer h2,
+.holidayFilterClearContainer h2 {
+  color: #afafaf;
+}
+
+.holidayFilterClearContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateDropDownButton {
+  width: 80px;
+}
+
+.dateFilterRem {
+  width: auto;
+}

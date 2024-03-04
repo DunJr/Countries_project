@@ -1,30 +1,85 @@
-# React + TypeScript + Vite
+# Documentação do Projeto: Nation Insights
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Introdução
 
-Currently, two official plugins are available:
+- **Descrição do Projeto:**
+  Nation Insights oferece uma visão detalhada e interativa de informações globais, explorando dados sobre países, incluindo notícias, feriados e estatísticas essenciais.
+- **Propósito:**
+  O projeto visa fornecer uma compreensão abrangente das nações ao redor do mundo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 2. Configuração do Ambiente
 
-## Expanding the ESLint configuration
+- **Requisitos de Sistema:**
+  - Node.js
+  - npm (ou Yarn)
+- **Dependências:**
+  - React
+  - @progress/kendo-react-grid
+  - ... (outras dependências)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 3. Instalação
 
-- Configure the top-level `parserOptions` property like this:
+- **Instruções de Instalação:**
+  1.  Clone o repositório.
+  2.  Execute `npm install` ou `yarn install` para instalar as dependências.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 4. Executando o Projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Instruções para Execução:**
+  - Execute `npm start` ou `yarn start` para iniciar o aplicativo localmente.
+
+## 5. Estrutura do Projeto
+
+- **Organização de Arquivos:**
+  - `/src`: Código-fonte da aplicação.
+  - `/public`: Arquivos estáticos.
+
+## 6. Desenvolvimento
+
+- **Tecnologias Utilizadas:**
+  - React, JavaScript/TypeScript, KendoReact.
+- **Padrões de Codificação:**
+  - Seguir as diretrizes do eslint e prettier.
+- **Contribuição:**
+  - Fork o repositório, crie uma branch, faça alterações e envie um pull request.
+- **Executando Testes:**
+  - `npm test` ou `yarn test`.
+
+## 7. Funcionalidades
+
+- **Principais Recursos:**
+  - Grid interativa com informações sobre países.
+  - Página detalhada para cada país.
+
+## 8. Telas e Interfaces
+
+- **Descrição das Telas:**
+  - `MainPage`: Apresenta uma lista de países com informações básicas.
+  - `CountryPage`: Detalhes específicos de um país selecionado.
+
+## 9. Troubleshooting
+
+- **Problemas Comuns:**
+  - Se encontrar problemas ao iniciar o aplicativo, verifique se as dependências estão instaladas corretamente.
+
+## 10. Licença
+
+- **Tipo de Licença:**
+  MIT License.
+
+## 11. Contato
+
+- **Informações de Contato:**
+  - [Email do Mantenedor](carlosroberiojp@hotmail.com)
+
+## 12. Histórico de Revisões
+
+- **Registro de Alterações:**
+  - **v1.0.0 (Data):**
+    - Lançamento inicial.
+
+## 13. Referências
+
+- **Documentação Externa:**
+  - [React Documentation](https://reactjs.org/docs/getting-started.html)
+  - [KendoReact Documentation](https://www.telerik.com/kendo-react-ui/)
