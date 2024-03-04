@@ -1,6 +1,7 @@
 import { GridColumn as Column } from "@progress/kendo-react-grid";
 
 import { Currencies } from "../../types/countryInfo";
+import React from "react";
 
 export const CustomCol = (props: Currencies) => {
   return (
